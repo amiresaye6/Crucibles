@@ -5,6 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const authRoutes = require('./routes/auth.routes');
+const reportsRoutes = require('./routes/reports.routes');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/reports', reportsRoutes);
 
 app.get('/', (req, res) => {
     res.json({ message: 'Hello World!' });

@@ -32,14 +32,14 @@ CityPulse provides:
 ## 📋 Backend Developer TODO List (Amir)
 
 ### 🛠 Project Setup
-- [ ] Initialize Node.js project with Express and Mongoose
-- [ ] Set up folder structure and `.env` config
-- [ ] Connect MongoDB
+- ✅ Initialize Node.js project with Express and Mongoose
+- ✅ Set up folder structure and `.env` config
+- ✅ Connect MongoDB
 
 ### 👤 Authentication
-- [ ] Create User model
-- [ ] Register/Login endpoints with JWT
-- [ ] Auth & Role middlewares
+- ✅ Create User model
+- ✅ Register/Login endpoints with JWT
+- ✅ Auth & Role middlewares
 
 ### 📍 Report Management
 - [ ] Report model (description, location, image, status, etc.)
