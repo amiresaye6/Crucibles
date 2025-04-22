@@ -1,0 +1,21 @@
+{
+  "name": "crucibles",
+  "version": "1.0.0",
+  "description": "CityPulse is a smart urban problem-reporting platform developed during the ALX Hackathon. It empowers citizens to report real-world city issues (e.g., potholes, broken lights, waste problems) using a simple mobile app. These reports are then analyzed by AI to categorize the problem and assign a priority score, ensuring faster and smarter response by the city authorities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "morgan": "^1.10.0"
+  }
+}
