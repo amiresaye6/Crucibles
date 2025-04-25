@@ -38,7 +38,7 @@ const signup = async (req, res) => {
         });
 
         // Token
-        const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, {
+        const token = jwt.sign({ id: user._id, role: user.role, department: user.department }, JWT_SECRET, {
             expiresIn: JWT_EXPIRES_IN,
         });
 
@@ -49,6 +49,7 @@ const signup = async (req, res) => {
                 name: user.name,
                 email: user.email,
                 role: user.role,
+                department: user.department,
             },
             token,
         });
@@ -77,7 +78,7 @@ const login = async (req, res) => {
         if (!isMatch) return res.status(401).json({ error: 'Invalid credentials' });
 
         // Token
-        const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, {
+        const token = jwt.sign({ id: user._id, role: user.role, department: user.department }, JWT_SECRET, {
             expiresIn: JWT_EXPIRES_IN,
         });
 
@@ -88,6 +89,7 @@ const login = async (req, res) => {
                 name: user.name,
                 email: user.email,
                 role: user.role,
+                department: user.department
             },
             token,
         });

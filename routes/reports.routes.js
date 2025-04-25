@@ -1,29 +1,18 @@
-const { protect, authorizeRoles } = require('../middleware/auth.middleware');
+const express = require("express");
+const router = express.Router();
+const {
+    getAllReports,
+    getReportById,
+    createReport,
+    updateReport,
+    deleteReport
+} = require("../controllers/report.controller");
+const { protect, authorizeRoles } = require("../middleware/auth.middleware");
 
-const router = require('express').Router();
-
-// test to see if the protect and authorizeRoles middlewares are working
-router.get('/', protect, authorizeRoles('admin'), (req, res) => {
-    res.json({
-        message: 'welcome, admin', reports: [
-            {
-                id: 1,
-                title: 'Report 1',
-                description: 'Description of report 1',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                id: 2,
-                title: 'Report 2',
-                description: 'Description of report 2',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            }
-        ]
-    });
-}
-);
-
+router.get('/', protect, authorizeRoles('admin', 'department', 'user'), getAllReports);
+router.post('/', protect, authorizeRoles('user', 'admin', 'department'), createReport); // Add multer middleware
+router.get('/:id', protect, authorizeRoles('admin', 'department', 'user'), getReportById);
+router.put('/:id', protect, authorizeRoles('admin', 'department'), updateReport);
+router.delete('/:id', protect, authorizeRoles('admin'), deleteReport);
 
 module.exports = router;
